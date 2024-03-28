@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Casher Receipt </title>
+    <style>
+        @import "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap";
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            direction: rtl;
+            font-family: "Noto Kufi Arabic", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        main {
+            width: 100%;
+            padding: 24px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            width: 80mm;
+            margin: 10px auto;
+            background-color: #eee;
+        }
+
+        span,
+        p {
+            font-size: 12px;
+        }
+
+        .logo {
+            width: 100%;
+            aspect-ratio: 2/1;
+            max-height: 80px;
+            margin-bottom: 20px;
+            -o-object-fit: contain;
+            object-fit: contain;
+        }
+
+        .ArEnRow {
+            display: flex;
+            gap: 4px;
+            text-transform: capitalize;
+            align-items: center;
+        }
+
+        .ArEnRow .En {
+            text-align: left;
+            flex: 1;
+        }
+
+        .ArEnRow .Ar {
+            text-align: right;
+            flex: 1;
+        }
+
+        .ArEnRow .innerData {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .companyInfo {
+            text-align: center;
+        }
+
+        .table .tableHead {
+            border-top: 1px dashed #000;
+            border-bottom: 1px dashed #000;
+            display: flex;
+            padding: 4px 0;
+            width: 100%;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .table .tableHead p {
+            flex: 1;
+        }
+
+        .table ol {
+            list-style: decimal;
+        }
+
+        .table ol li {
+            gap: 4px;
+            text-transform: capitalize;
+            align-items: center;
+            position: relative;
+        }
+
+        .table ol li .name {
+            display: block;
+            width: 100%;
+            text-align: start;
+        }
+
+        .table ol li p {
+            display: inline-block;
+            width: 18%;
+            text-align: center;
+        }
+
+        .table ol li::marker {
+            font-size: 14px;
+        }
+
+        .table .total {
+            border-top: 1px dashed #000;
+            padding-top: 4px;
+            margin: 4px 0;
+        }
+
+        .table .total .row {
+            display: flex;
+            text-align: end;
+        }
+
+        .table .total .row p {
+            flex: 2;
+        }
+
+        .table .total .row span {
+            flex: 1;
+        }
+
+        .thanks {
+            border-top: 1px dashed #000;
+            padding-top: 4px;
+            text-align: center;
+        }
+
+        .qr {
+            width: 100%;
+            aspect-ratio: 1/1;
+            -o-object-fit: contain;
+            object-fit: contain;
+            max-height: 150px;
+        }
+
+        /*# sourceMappingURL=style.css.map */
+    </style>
+</head>
+
+<body>
+    <main>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Puma-Logo.png" alt="logo">
+        <div class="companyInfo">
+            <p class="ArEnRow">
+                <span class="Ar"> طلب </span> <span class="innerData"> 546 </span> <span class="En"> order </span>
+            </p>
+            <p> LIV Catring Company </p>
+            <p> S-THUMAMA </p>
+            <p> Vat : <span> 0000000000000 </span> </p>
+        </div>
+        <div class="table">
+            <div class="tableHead">
+                <p>فاتورة ضريبية مبسطة / Simplified Tax Invoice</p>
+            </div>
+            <p class="ArEnRow">
+                <span class="Ar"> رقم الفاتورة : </span> <span class="innerData"> 521651 </span> <span class="En"> :
+                    Invoice number </span>
+            </p>
+            <p class="ArEnRow">
+                <span class="Ar"> التاريخ : </span> <span class="innerData"> 10/10/2020 </span> <span class="En"> : date
+                </span>
+            </p>
+            <p class="ArEnRow">
+                <span class="Ar"> الوقت : </span> <span class="innerData"> 23:30 </span> <span class="En"> : time
+                </span>
+            </p>
+            <p class="ArEnRow">
+                <span class="Ar"> العميل : </span> <span class="innerData"> عميل نقدي </span> <span class="En"> : Client
+                </span>
+            </p>
+            <p class="ArEnRow">
+                <span class="Ar"> النوع : </span> <span class="innerData"> سفري </span> <span class="En"> : type </span>
+            </p>
+            <p class="ArEnRow">
+                <span class="Ar"> كاشير : </span> <span class="innerData"> sales person </span> <span class="En"> :
+                    Casher </span>
+            </p>
+            <p class="ArEnRow">
+                <span class="Ar"> طريقة الدفع : </span> <span class="innerData"> cash </span> <span class="En"> :
+                    Payment method </span>
+            </p>
+        </div>
+        <div class="table">
+            <div class="tableHead">
+                <p> الصنف </p>
+                <p> الكمية </p>
+                <p> السعر </p>
+                <p> الخصم </p>
+                <p> الاجمالي </p>
+            </div>
+            <ol>
+                <li class="row">
+                    <p class="name"> Corner burger </p>
+                    <p></p>
+                    <p> 1 </p>
+                    <p> 29.00 </p>
+                    <p> 0.00% </p>
+                    <p> 29.00 </p>
+                </li>
+                <li class="row">
+                    <p class="name"> Corner burger </p>
+                    <p></p>
+                    <p> 1 </p>
+                    <p> 29.00 </p>
+                    <p> 0.00% </p>
+                    <p> 29.00 </p>
+                </li>
+                <li class="row">
+                    <p class="name"> Corner burger </p>
+                    <p></p>
+                    <p> 1 </p>
+                    <p> 29.00 </p>
+                    <p> 0.00% </p>
+                    <p> 29.00 </p>
+                </li>
+                <li class="row">
+                    <p class="name"> Corner burger </p>
+                    <p></p>
+                    <p> 1 </p>
+                    <p> 29.00 </p>
+                    <p> 0.00% </p>
+                    <p> 29.00 </p>
+                </li>
+                <li class="row">
+                    <p class="name"> Corner burger </p>
+                    <p></p>
+                    <p> 1 </p>
+                    <p> 29.00 </p>
+                    <p> 0.00% </p>
+                    <p> 29.00 </p>
+                </li>
+            </ol>
+            <div class="total">
+                <div class="row">
+                    <p> الاجمالي </p>
+                    <span> SAR 57.00 </span>
+                </div>
+                <div class="row">
+                    <p> Tax 15% </p>
+                    <span> SAR 57.00 </span>
+                </div>
+                <div class="row">
+                    <p> الاجمالي </p>
+                    <span> SAR 57.00 </span>
+                </div>
+                <div class="row">
+                    <p> المدفوع </p>
+                    <span> SAR 57.00 </span>
+                </div>
+            </div>
+        </div>
+        <h6 class="thanks"> شكرا لزيارتكم نتمي عودتكم قريبا . هذه الفاتورة شامة الضريبة المضافة </h6>
+        <img class="qr"
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="qr">
+
+    </main>
+</body>
+
+</html>
